@@ -4,7 +4,7 @@ import fs from "fs";
 import categoriaModel from "../models/categoria.model.js";
 
 const produtoController = {
-  insertProduto: async (req, res) => {
+  insertProd: async (req, res) => {
     try {
       const { idCategoria, nome, preco } = req.body;
 
