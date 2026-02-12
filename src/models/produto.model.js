@@ -29,9 +29,15 @@ const produtoModel = {
     return rows;
   },
 
+  selectProdImg: async(pIdProduto) => {
+    const sql = 'SELECT vinculoImagem FROM produtos WHERE idProduto = ?;';
+    const values = [pIdProduto];
+    const [rows] = await pool.execute(sql, values);
+    return rows;
+  },
 
   update: async (pIdProduto, pIdCategoriaFK, pNomeProduto, pValorProduto, pVinculoImagem) => {
-    const sql = 'UPDATE produtos WHERE idProduto =? SET idCategoriaFK =?, nomeProduto = ?, valorProduto = ?, vinculoImagem = ? WHERE idProduto = ?;'
+    const sql = 'UPDATE produtos SET idCategoriaFK =?, nomeProduto = ?, valorProduto = ?, vinculoImagem = ? WHERE idProduto = ?;'
     const values = [pIdProduto, pIdCategoriaFK, pNomeProduto, pValorProduto, pVinculoImagem];
     const [rows] = await pool.execute(sql, values);
     return rows;

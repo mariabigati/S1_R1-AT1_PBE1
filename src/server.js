@@ -8,5 +8,5 @@ app.use(Routes);
 app.use('/images', express.static(path.resolve('uploads/images')));
 
 app.listen(process.env.SERVER_PORT, () => {
-    console.log(`Servidor rodando em http://localhost:${process.env.SERVER_PORT}`)
-})
+    console.log(`Servidor rodando em http://localhost:${process.env.SERVER_PORT}`);
+});

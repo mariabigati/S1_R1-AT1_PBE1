@@ -51,6 +51,8 @@ const categoriaController = {
   updateCateg: async (req, res) => {
     try {
       const { descricaoCategoria, idCategoria } = req.query;
+      const verifCateg = await categoriaModel.selectOneCateg(idCategoria);
+
       if (!idCategoria || !descricaoCategoria) {
         return res.status(200).json({
           message: "Informações faltantes!",
@@ -62,10 +64,16 @@ const categoriaController = {
           message: "Por favor, insira uma descrição maior que três caracteres!",
         });
       }
+      if (verifCateg.length == 0) {
+        return res.status(200).json({
+          message: "Não foi encontrado nenhum registro com esse ID.",
+        });
+      }
       const result = await categoriaModel.updateCateg(
         descricaoCategoria,
         idCategoria,
       );
+
       console.log(result);
 
       return res.status(200).json({
@@ -80,6 +88,7 @@ const categoriaController = {
       });
     }
   },
+
   deleteCateg: async (req, res) => {
     try {
       const { idCategoria } = req.query;
@@ -93,6 +102,7 @@ const categoriaController = {
               "Não é possível deletar essa categoria, pois ela possui produtos cadastrados!",
           });
       }
+
       if (!idCategoria) {
         res.status(200).json({ message: "Dados enviados inválidos!" });
       }
@@ -110,7 +120,7 @@ const categoriaController = {
         errorMessage: error.message,
       });
     }
-  },
+  }
 };
 
 export default categoriaController;

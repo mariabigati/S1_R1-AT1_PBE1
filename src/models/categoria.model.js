@@ -18,6 +18,7 @@ const categoriaModel = {
     const [rows] = await pool.execute(sql, values);
     return rows;
   },
+  
   updateCateg: async (pDescricaoCategoria, pIdCategoria) => {
     const sql = "UPDATE categorias SET descricaoCategoria=? WHERE idCategoria=?;";
     const values = [pDescricaoCategoria, pIdCategoria];

@@ -1,0 +1,315 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: S1_R1 - AT1_PBE 1
+meta:
+  id: wrk_569dec1f505445a28cbad594e5022ed9
+  created: 1770814221287
+  modified: 1770814221287
+  description: ""
+collection:
+  - name: Categorias
+    meta:
+      id: fld_6ac67fa9ac854c5bb401d50c24308542
+      created: 1770814241497
+      modified: 1770817929688
+      sortKey: -1770814241497
+      description: ""
+    children:
+      - url: localhost:8081/categorias
+        name: SELECT
+        meta:
+          id: req_0fa2379b1bde49e3b287e73d7ba07f84
+          created: 1770814250216
+          modified: 1770816919620
+          isPrivate: false
+          description: ""
+          sortKey: -1770814250216
+        method: GET
+        body:
+          mimeType: multipart/form-data
+          params:
+            - name: ""
+              value: ""
+              description: ""
+              disabled: false
+        parameters:
+          - name: idCategoria
+            value: ""
+            description: ""
+            disabled: false
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/categorias
+        name: INSERT
+        meta:
+          id: req_4798a202006f48f1822ebbf91d821d87
+          created: 1770814340033
+          modified: 1770818631081
+          isPrivate: false
+          description: ""
+          sortKey: -1770814250116
+        method: POST
+        parameters:
+          - name: descricaoCategoria
+            value: Minerais
+            description: ""
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/categorias
+        name: UPDATE
+        meta:
+          id: req_5167c03847904d2d852aa2ac137016a1
+          created: 1770817664561
+          modified: 1770898693776
+          isPrivate: false
+          description: ""
+          sortKey: -1770814250316
+        method: PUT
+        parameters:
+          - name: idCategoria
+            value: 9b831a14-074b-11f1-bab0-00d76d227fd0
+            description: ""
+            disabled: false
+          - name: descricaoCategoria
+            value: Sucos
+            description: ""
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/categorias
+        name: DELETE
+        meta:
+          id: req_ec5f6e7ee222414fb6e7ca71dea4b1de
+          created: 1770817932884
+          modified: 1770898858103
+          isPrivate: false
+          description: ""
+          sortKey: -1770814250416
+        method: DELETE
+        parameters:
+          - name: idCategoria
+            value: 400b0263-080d-11f1-bab0-00d76d227fd0
+            description: ""
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Produtos
+    meta:
+      id: fld_fd0cef88eaca403f84a4cffc711f9df3
+      created: 1770816127299
+      modified: 1770816132204
+      sortKey: -1770816127299
+      description: ""
+    children:
+      - url: localhost:8081/produtos
+        name: INSERT
+        meta:
+          id: req_11c9ff78d92e43e9b900a0a9484d3539
+          created: 1770816133336
+          modified: 1770899844012
+          isPrivate: false
+          description: ""
+          sortKey: -1770816135470
+        method: POST
+        body:
+          mimeType: multipart/form-data
+          params:
+            - name: image
+              value: ""
+              description: ""
+              disabled: false
+              fileName: C:\Users\54668448885\Downloads\morango.jpg
+              type: file
+            - name: idCategoria
+              value: c3e1ad3c-0748-11f1-bab0-00d76d227fd0
+              description: ""
+              disabled: false
+            - name: nome
+              value: Bebida láctea sabor morango
+              description: ""
+              disabled: false
+            - name: preco
+              value: "2.50"
+              description: ""
+              disabled: false
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/produtos
+        name: SELECT
+        meta:
+          id: req_33a64493482648d4b066c14d18272a6a
+          created: 1770816518095
+          modified: 1770894696279
+          isPrivate: false
+          description: ""
+          sortKey: -1770816135570
+        method: GET
+        parameters:
+          - name: idProduto
+            value: ""
+            description: ""
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/produtos
+        name: DELETE
+        meta:
+          id: req_e82e29d605524de391094caafa3263b8
+          created: 1770894633052
+          modified: 1770900321407
+          isPrivate: false
+          description: ""
+          sortKey: -1770816135670
+        method: DELETE
+        parameters:
+          - name: idProduto
+            value: 956152d9-080f-11f1-bab0-00d76d227fd0
+            description: ""
+            disabled: false
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8081/produtos
+        name: UPDATE
+        meta:
+          id: req_72074ceb881547cf9ac8bc5079c800ac
+          created: 1770897428993
+          modified: 1770900285297
+          isPrivate: false
+          description: ""
+          sortKey: -1770816135770
+        method: PUT
+        body:
+          mimeType: multipart/form-data
+          params:
+            - name: idCategoriaFk
+              value: c31ad3c-0748-11f1-bab0-00d76d227fd0
+              description: ""
+              disabled: false
+            - name: nomeProduto
+              value: morangos
+              description: ""
+              disabled: false
+            - name: valorProduto
+              value: "2"
+              description: ""
+              disabled: false
+            - name: image
+              value: ""
+              description: ""
+              disabled: false
+              fileName: C:\Users\54668448885\Downloads\sabor.jpg
+              type: file
+            - name: idProduto
+              value: 95612d9-080f-11f1-bab0-00d76d227fd0
+              description: ""
+              disabled: false
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/12.3.1
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_89dd7861e430a36f864572a6828a176759b5a242
+    created: 1770814221301
+    modified: 1770814221301
+environments:
+  name: Base Environment
+  meta:
+    id: env_89dd7861e430a36f864572a6828a176759b5a242
+    created: 1770814221293
+    modified: 1770814221293
+    isPrivate: false
